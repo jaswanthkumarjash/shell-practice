@@ -15,7 +15,7 @@ INSTALL () {
     dnf list installed "$1"
     if [ $? -ne 0 ]; then
         echo "Not Installed yet, We need to install"
-        dnf install "$a" -y
+        dnf install "$1" -y
         if [ $? -ne 0 ]; then
             echo "ERROR:: $1 installation failed"
             exit 1
@@ -24,6 +24,7 @@ INSTALL () {
         fi
         else
             echo "Already installed, no need to install again"
+        fi
 }
 
 INSTALL $a
