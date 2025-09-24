@@ -1,28 +1,37 @@
-do installation
-check for installation
-add functions
-add colors to output
+#!/bin/bash
 
-dnf list installed nginx
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
-if [ $? -ne 0 ]; then VALIDATE $? "Nginx" dnf install nginx -y
+USERID=$(id -u)
 
-else
-
-echo "Nginx already exist $G SKIPPING $N"
-
+if [ $? -ne 0 ]; then
+    echo "ERROR:: Try running this script as root user"
+    exit 1
 fi
 
-dnf list installed python3
+a=$1
+b=$2
+c=$3
 
-if [ $? -ne 0 ]; then dnf install python3 -y VALIDATE $? "python3"
+INSTALL () {
+    dnf list installed "$1"
+    if [ $? -ne 0 ]; then
+        echo "Not Installed yet, We need to install"
+        dnf install "$1" -y
+        if [ $? -ne 0 ]; then
+            echo -e "$R ERROR:: $1 installation failed $N"
+            exit 1
+            else
+                echo -e "$G $1 installation completed $N"
+        fi
+        else
+            echo -e "$Y Already installed $1, no need to install again $N"
+        fi
+}
 
-else
-
-echo "Nginx already exist.. $G SKIPPING $N"
-
-0
-
-fi
-
-I
+INSTALL $a
+INSTALL $b
+INSTALL $c
