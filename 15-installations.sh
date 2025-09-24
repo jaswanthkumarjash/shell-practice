@@ -23,7 +23,7 @@ INSTALL () {
                 echo "$1 installation completed"
         fi
         else
-            echo "Already installed, no need to install again"
+            echo "Already installed $1, no need to install again"
         fi
 }
 
