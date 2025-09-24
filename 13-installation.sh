@@ -33,7 +33,7 @@ echo -e "\n Step3"
 dnf install python3 -y
 
 if [ $? -ne 0 ]
-    echo "PYTHON# installation failed"
+    echo "PYTHON3 installation failed"
     exit 3
 else
     echo "PYTHON3 installation is successfull"

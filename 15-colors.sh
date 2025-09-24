@@ -1,28 +1,9 @@
-do installation
-check for installation
-add functions
-add colors to output
+#!/bin/bash
 
-dnf list installed nginx
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
-if [ $? -ne 0 ]; then VALIDATE $? "Nginx" dnf install nginx -y
-
-else
-
-echo "Nginx already exist $G SKIPPING $N"
-
-fi
-
-dnf list installed python3
-
-if [ $? -ne 0 ]; then dnf install python3 -y VALIDATE $? "python3"
-
-else
-
-echo "Nginx already exist.. $G SKIPPING $N"
-
-0
-
-fi
-
-I
+echo -e "$G Hello World $N"
+echo "Check this color"
