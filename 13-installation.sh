@@ -8,7 +8,7 @@ fi
 
 echo -e "\n Step1"
 
-dnf install mysql -d
+dnf install mysql -y
 
 if [ $? -ne 0 ]; then
     echo "MYSQL installation failed"
