@@ -28,16 +28,16 @@ INSTALL () {
         echo "Not Installed yet, We need to install"
         dnf install "$1" -y &>> $LOGFILE
         if [ $? -ne 0 ]; then
-            echo -e "$R ERROR:: $1 installation failed $N"
+            echo -e "$2 ERROR:: $1 installation failed $5"
             exit 1
             else
-                echo -e "$G $1 installation completed $N"
+                echo -e "$3 $1 installation completed $5"
         fi
         else
-            echo -e "$Y Already installed $1, no need to install again $N"
+            echo -e "$4 Already installed $1, no need to install again $5"
         fi
 }
 
-INSTALL $a
+INSTALL $a $R $G $Y $N
 INSTALL $b
 INSTALL $c
