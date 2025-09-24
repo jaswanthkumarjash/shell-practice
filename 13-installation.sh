@@ -6,6 +6,8 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi
 
+echo -e "\n Step1"
+
 dnf install mysql -d
 
 if [ $? -ne 0 ]; then
@@ -15,6 +17,8 @@ else
     echo "MYSQL installation successfull"
 fi 
 
+echo -e "\n Step2"
+
 dnf install nginx -y
 
 if [ $? -ne 0 ]; then
@@ -23,6 +27,8 @@ if [ $? -ne 0 ]; then
 else
     echo "NGINX installation is successfull"
 fi
+
+echo -e "\n Step3"
 
 dnf install python3 -y
 
