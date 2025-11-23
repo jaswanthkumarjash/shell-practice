@@ -7,7 +7,7 @@ LNAME="KUMAR"
 
 
 SUM=$(($NUMBER1 + $NUMBER2))
-NAME=$(($FNAME + $LNAME))
+NAME=$FNAME$LNAME
 
 echo "SUM is: $SUM"
 
