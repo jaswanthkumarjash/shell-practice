@@ -7,7 +7,7 @@ echo "Current directory: $PWD"
 echo "Who is running this script: $USER"
 echo "Home directory of the user: $HOME"
 echo "Process ID of the current script: $$"
-sleep 50 &
+sleep 5 &
 echo "Process ID of the last background command: $!"
 echo "Total number of arguments passed: $#"
 echo "Last command exit status: $?"
