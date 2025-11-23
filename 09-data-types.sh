@@ -7,7 +7,8 @@ LNAME="KUMAR"
 
 
 SUM=$(($NUMBER1 + $NUMBER2))
-NAME=$FNAME$LNAME
+NAME=$FNAME$LNAME #to concatenate two strings.
+
 
 echo "SUM is: $SUM"
 
