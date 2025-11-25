@@ -28,12 +28,12 @@ INSTALL () {
         if [ $? -ne 0 ]; then
             echo -e "$2 ERROR:: $1 installation failed $5" | tee -a $LOGFILE
             exit 1
-            else
-                echo -e "$3 $1 installation completed $5" | tee -a $LOGFILE
-        fi
         else
-            echo -e "$4 Already installed $1, no need to install again $5" | tee -a $LOGFILE
+            echo -e "$3 $1 installation completed $5" | tee -a $LOGFILE
         fi
+    else
+        echo -e "$4 Already installed $1, no need to install again $5" | tee -a $LOGFILE
+    fi
 }
 
 for var in $@
