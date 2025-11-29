@@ -44,7 +44,7 @@ if [ ! -z "${FILES}" ]; then
     if [ -f $ZIP_FILE_NAME ]; then
         for f in ${FILES[@]}
         do
-            FILE=$( echo $f | awk -F "." '{print $NF}')
+            FILE=$( echo $f | awk -F "/" '{print $NF}')
             echo "Deleting the file: $FILE"
             rm -rf $f
             echo "Deleted the file: $FILE"
