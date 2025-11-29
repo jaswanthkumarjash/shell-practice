@@ -7,6 +7,8 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi
 
+dnf install zip -y
+
 LOG_FOLDER=/"var/log/shell-log"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
