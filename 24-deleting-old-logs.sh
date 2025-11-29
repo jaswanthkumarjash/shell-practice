@@ -34,5 +34,5 @@ for f in ${FILES[@]}
 do
     echo "Deleting the file: $f"
     rm -rf $f
-    echo $f | a=(awk -F "/" '{print -$nF}') | echo "Deleted file: $a"
+    echo "Deleted file: $f"
 done
