@@ -28,6 +28,8 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime -14)
 
+echo ${FILES[@]}
+
 for f in ${FILES[@]}
 do
     echo "Deleting the file: $f"
