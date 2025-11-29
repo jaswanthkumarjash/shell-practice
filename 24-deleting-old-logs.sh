@@ -1,12 +1,11 @@
 #!/bin/bash
-: << "EOF"
+
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ]; then
     echo "ERROR:: You dont have root access"
     exit 1
 fi
-EOF
 
 R="\e[31m"
 G="\e[32m"
