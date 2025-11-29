@@ -26,7 +26,7 @@ if [ ! -d $SOURCE_DIR ]; then
     exit 1
 fi
 
-FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime -14)
+FILES=$(find $SOURCE_DIR -name "*.log" -type f)
 
 echo ${FILES[@]}
 
