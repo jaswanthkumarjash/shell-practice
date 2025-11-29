@@ -28,21 +28,9 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -type f)
 
-for f in ${FILES[@]}
-do
-    FILE_NAME=$( echo $f | awk -F "/" '{print $NF}' )
-    echo "Deleting the file: $FILE_NAME"
-    rm -rf $f
-    echo "Deleted file: $FILE_NAME"
-done
-
-: << "EOF"
-
 while IFS= read -r filepath
 do
     echo "Deleting the file: $filepath"
     rm -rf $filepath
     echo "Deleted the file: $filepath"
-done <<< $FILES_TO_DELETE
-
-EOF
+done <<< $FILES
