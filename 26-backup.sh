@@ -35,7 +35,7 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
 
-if [ ! -z $FILES ]; then
+if [ ! -z ${FILES} ]; then
     TIMESTAMP=$(date +%F-%H-%M)
     ZIP_FILE_NAME="$DESTINATION_DIR/app-log-$TIMESTAMP.zip"
     find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS | zip -@ -j "$ZIP_FILE_NAME"
